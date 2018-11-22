@@ -10,8 +10,13 @@ val sparkSql = "org.apache.spark" %% "spark-sql" % sparkVersion
 val sparkML = "org.apache.spark" %% "spark-mllib" % sparkVersion
 val spark = Seq(sparkCore, sparkSql, sparkML)
 
+val scalaTestVersion = "3.0.5"
+val scalaTest = "org.scalatest" %% "scalatest" % scalaTestVersion % Test
+
+val deps = Seq(scalaTest) ++ spark
+
 lazy val SparkMLEx = (project in file("."))
   .settings(
     commonSettings,
-    libraryDependencies ++= spark
+    libraryDependencies ++= deps
   )
