@@ -5,10 +5,13 @@ lazy val commonSettings = Seq(
 )
 
 val sparkVersion = "2.4.0"
-val sparkCore = "org.apache.spark" % "spark-core_2.11" % sparkVersion
+val sparkCore = "org.apache.spark" %% "spark-core" % sparkVersion
+val sparkSql = "org.apache.spark" %% "spark-sql" % sparkVersion
+val sparkML = "org.apache.spark" %% "spark-mllib" % sparkVersion
+val spark = Seq(sparkCore, sparkSql, sparkML)
 
 lazy val SparkMLEx = (project in file("."))
   .settings(
     commonSettings,
-    libraryDependencies += sparkCore
+    libraryDependencies ++= spark
   )
