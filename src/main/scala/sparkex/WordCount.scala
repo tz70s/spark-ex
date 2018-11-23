@@ -1,4 +1,4 @@
-package sparkmlex
+package sparkex
 
 import org.apache.hadoop.mapred.FileAlreadyExistsException
 import org.apache.spark.sql.SparkSession

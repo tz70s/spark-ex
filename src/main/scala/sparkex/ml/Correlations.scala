@@ -1,4 +1,4 @@
-package sparkmlex.ml
+package sparkex.ml
 
 import org.apache.spark.ml.linalg.{Matrix, Vectors}
 import org.apache.spark.ml.stat.Correlation

@@ -5,17 +5,19 @@ lazy val commonSettings = Seq(
 )
 
 val sparkVersion = "2.4.0"
-val sparkCore = "org.apache.spark" %% "spark-core" % sparkVersion
-val sparkSql = "org.apache.spark" %% "spark-sql" % sparkVersion
-val sparkML = "org.apache.spark" %% "spark-mllib" % sparkVersion
-val spark = Seq(sparkCore, sparkSql, sparkML)
+val sparkGroupId = "org.apache.spark"
+val sparkCore = sparkGroupId %% "spark-core" % sparkVersion
+val sparkSql = sparkGroupId %% "spark-sql" % sparkVersion
+val sparkML = sparkGroupId %% "spark-mllib" % sparkVersion
+val sparkStream = sparkGroupId %% "spark-streaming" % sparkVersion
+val spark = Seq(sparkCore, sparkSql, sparkML, sparkStream)
 
 val scalaTestVersion = "3.0.5"
 val scalaTest = "org.scalatest" %% "scalatest" % scalaTestVersion % Test
 
 val deps = Seq(scalaTest) ++ spark
 
-lazy val SparkMLEx = (project in file("."))
+lazy val `spark-ex` = (project in file("."))
   .settings(
     commonSettings,
     libraryDependencies ++= deps

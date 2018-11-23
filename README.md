@@ -1,2 +1,2 @@
-# sparkml-ex
-Practices for SparkML.
+# spark-ex
+Practices for Spark.
